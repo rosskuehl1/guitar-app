@@ -28,9 +28,13 @@ const rollupPlugin = (matchers: RegExp[]) => ({
   },
 });
 
+// GitHub Pages serves the app from /guitar-app/ by default; allow overrides via env.
+const basePath = process.env.VITE_BASE_PATH ?? process.env.BASE_PATH ?? '/guitar-app/';
+
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/guitar-app',
+  base: basePath,
   define: {
     global: 'window',
   },
