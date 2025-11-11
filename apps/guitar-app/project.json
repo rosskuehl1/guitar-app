@@ -70,7 +70,7 @@
         "cwd": "guitar-app",
         "commands": [
           "cp dist/apps/guitar-app/web/index.html dist/apps/guitar-app/web/404.html",
-          "npx gh-pages -d dist/apps/guitar-app/web --branch gh-pages --dotfiles --dest guitar-app"
+          "../node_modules/.bin/gh-pages -d dist/apps/guitar-app/web --branch gh-pages --dotfiles --dest guitar-app"
         ],
         "parallel": false
       }
