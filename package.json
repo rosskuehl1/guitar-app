@@ -68,8 +68,5 @@
     "typescript-eslint": "^8.40.0",
     "vite": "^7.0.0",
     "vitest": "^3.0.0"
-  },
-  "workspaces": [
-    "apps/*"
-  ]
+  }
 }
