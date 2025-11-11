@@ -47,36 +47,32 @@ To generate a new application, use:
 npx nx g @nx/react-native:app demo
 ```
 
-To generate a new library, use:
+# GuitarApp
+
+GuitarApp is a cross-platform guitar companion built with React Native and rendered on the web via Vite. The GitHub Pages deployment serves the compiled web bundle so the app lives at [`https://rosskuehl1.github.io/guitar-app/`](https://rosskuehl1.github.io/guitar-app/).
+
+## 🚀 Live Demo
+
+- 👉 [Launch the Guitar App](https://rosskuehl1.github.io/guitar-app/)
+
+## 🧑‍💻 Local Development
 
 ```sh
-npx nx g @nx/react:lib mylib
+npm install
+npx nx serve guitar-app
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+The dev server runs the Vite-powered React Native Web build. Use `npx nx build guitar-app --configuration=production` whenever you need a production bundle.
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 📦 Deployment
 
+```sh
+npm run deploy
+```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+`npm run deploy` compiles the production bundle and publishes `dist/apps/guitar-app/web` to the `gh-pages` branch under the `guitar-app/` directory. GitHub Pages then serves the site from `/guitar-app/` on the public site.
 
-## Install Nx Console
+### Customizing the Base Path
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/react-native?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
+The Vite config defaults to `base: '/guitar-app/'`. Override it by setting `VITE_BASE_PATH` (or `BASE_PATH`) before running the build or deploy target when hosting under a different path.
 And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
